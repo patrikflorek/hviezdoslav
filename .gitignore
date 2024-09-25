@@ -1,6 +1,10 @@
 books_html/
 books_txt/
 
+footnotes_extracted.csv
+footnotes.csv
+dictionary.csv
+
 __pycache__/
 *.py[cod]
 *$py.class
