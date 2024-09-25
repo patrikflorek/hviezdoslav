@@ -1,4 +1,5 @@
 books_html/
+books_txt/
 
 __pycache__/
 *.py[cod]
