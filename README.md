@@ -17,9 +17,11 @@ The data were initially downloaded from [Zlatý fond SME](https://zlatyfond.sme.
 
 ### Plain text dataset
 
-The HTML files were then converted to plain text using the script `html_to_text.py` and stored in the `./books_txt` folder. At the same time, the text was cleaned of unnecessary parts (e.g., references and footnotes),
-various special characters were replaced with their ASCII equivalents, and the text was split into individual chapters/poems.
-Finally, the manually downloaded book "1869. (II.)" was cleaned and incorporated into the dataset,  and ZIP archive `books_txt.zip` was created. 
+The HTML files were then converted to plain text using the script `html_to_text.py` and stored in the `./books_txt` folder. 
+At the same time, the text was cleaned of unnecessary parts (e.g., references and footnotes), various special characters were
+replaced with their ASCII equivalents, and the text was split into individual chapters/poems. The manually downloaded book 
+"1869. (II.)" was cleaned and incorporated into the dataset. Books "Herodes a Herodias", "Vzhledanie", and "Korešpondencia 
+P. O. Hviezdoslava so Svetozárom Hurbanom Vajanským a Jozefom Škultétym" were deleted from the dataset due to their mostly non-poetic nature. Finally, the ZIP archive `books_txt.zip` was created from the remaining books. 
 
 ### Dictionary
 
