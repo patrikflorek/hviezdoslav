@@ -6,6 +6,15 @@
 This repository contains collection of most of the poetic works by the Slovak poet [Pavol Országh Hviezdoslav](https://en.wikipedia.org/wiki/Pavol_Orsz%C3%A1gh_Hviezdoslav). The purpose of this collection is to fine-tune a language model to generate poetry in style of P. O. Hviezdoslav.
 
 
+## Prerequisites
+
+To run the scripts, you need to install packages from `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+
 ## Dataset building
 
 The dataset was built in several steps:
