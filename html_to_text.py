@@ -91,6 +91,11 @@ def main():
             with open(txt_chapter_path, "wt") as f:
                 f.write(f"{clean_chapter_title}\n\n\n{reformatted_literal_text}")
 
+    # Copy manually the downloaded book "1869. (II.)" to the `books_txt` directory
+    shutil.copytree(
+        "./BOOKS_MANUAL_DOWNLOAD_TXT/1869. (II.)", os.path.join(TXT_DIR, "1869. (II.)")
+    )
+
     # Create a ZIP archive of a content of `books_txt`
     with zipfile.ZipFile("books_txt.zip", "w") as zipf:
         for root, _, files in os.walk(TXT_DIR):
