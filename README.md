@@ -30,8 +30,8 @@ The HTML files were then converted to plain text using the script `html_to_text.
 At the same time, the text was cleaned of unnecessary parts (e.g., references and footnotes), various special characters were
 replaced with their ASCII equivalents, and the text was split into individual chapters/poems. The manually downloaded book 
 "1869. (II.)" was cleaned and incorporated into the dataset. Books "Herodes a Herodias", "Vzhledanie", and "Korešpondencia 
-P. O. Hviezdoslava so Svetozárom Hurbanom Vajanským a Jozefom Škultétym" were deleted from the dataset due to their mostly non-poetic nature. Finally, the ZIP archive `books_txt.zip` was created from the remaining books. 
+P. O. Hviezdoslava so Svetozárom Hurbanom Vajanským a Jozefom Škultétym" were excluded from the dataset due to their mostly non-poetic nature. Finally, the ZIP archive `books_txt.zip` was created from the remaining books. 
 
 ### Dictionary
 
-Footnotes were extracted from the automatically downloaded books in HTML format using `extract_footnotes.py` and combined with the manually downloaded footnotes from the book "1869. (II.)". Then, the dictionary `dictionary.csv` of terms defined in the footnotes was created using `footnotes_to_dictionary.py`. Subsequently, the file was compressed into ZIP archive `dictionary.zip`.
+Footnotes were extracted from the automatically downloaded books in HTML format using `extract_footnotes.py` and combined with the manually downloaded footnotes from the book "1869. (II.)". Then, the dictionary `dictionary.csv` of terms defined in the footnotes was created using `footnotes_to_dictionary.py`.

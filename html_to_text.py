@@ -5,11 +5,18 @@ This script converts and reformat the downloaded books in HTML format to plain t
 import os
 import re
 import shutil
+import zipfile
 from bs4 import BeautifulSoup
 
 
 HTML_DIR = "books_html"
 TXT_DIR = "books_txt"
+
+EXCLUDED_BOOKS = [
+    "orszagh-hviezdoslav-pavol_herodes-a-herodias_txt.html",
+    "hviezdoslav_korespondencia_txt.html",
+    "hviezdoslav_vzhledanie_txt.html",
+]
 
 
 def main():
@@ -24,6 +31,10 @@ def main():
     html_book_filenames = os.listdir(HTML_DIR)
     for html_book_filename in html_book_filenames:
         print(f"{html_book_filename}")
+        if html_book_filename in EXCLUDED_BOOKS:
+            print(f"  Skipping {html_book_filename}")
+            continue
+
         html_book_path = os.path.join(HTML_DIR, html_book_filename)
         with open(html_book_path, "rt") as f:
             html_book = f.read()
@@ -79,6 +90,15 @@ def main():
             txt_chapter_path = os.path.join(book_txt_dir, txt_chapter_filename)
             with open(txt_chapter_path, "wt") as f:
                 f.write(f"{clean_chapter_title}\n\n\n{reformatted_literal_text}")
+
+    # Create a ZIP archive of a content of `books_txt`
+    with zipfile.ZipFile("books_txt.zip", "w") as zipf:
+        for root, _, files in os.walk(TXT_DIR):
+            for file in files:
+                zipf.write(
+                    os.path.join(root, file),
+                    os.path.relpath(os.path.join(root, file), TXT_DIR),
+                )
 
 
 def clean_text(text):
