@@ -61,6 +61,7 @@ def main():
                 .get_text(strip=True)
             )
             clean_chapter_title = clean_text(chapter_title)
+            clean_chapter_title = clean_chapter_title.replace("\n", " ")
             print(f"  {i + 1:3d}. {clean_chapter_title}")
 
             # Remove references
